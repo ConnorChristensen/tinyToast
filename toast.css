@@ -1,0 +1,38 @@
+.toast {
+    /* let it breathe */
+    padding: 15px 0px;
+    width: 200px;
+    font-family: sans-serif;
+    /* make the font super thin */
+    font-weight: 100;
+    /* give it a fixed position on the screen */
+    position: fixed;
+    top: 10px;
+    /* make it stick to the right side */
+    right: 0;
+    /* make the text color white */
+    color: white;
+    /* play the showToast animation */
+    animation-name: showToast;
+    /* make the animation last 5 seconds */
+    animation-duration: 5s;
+    /* give it a cool light shadow */
+    box-shadow: 3px 3px 3px #adadad;
+}
+.toast.good {background: #009600;}
+.toast.bad {background: #aa0000;}
+.toast.warn {background: #d4ac00;}
+.toast > p {
+    margin: 0;
+    padding: 0px 10px;
+}
+/*
+start our toast outside the frame, bring it in the frame,
+and then take it back out
+*/
+@keyframes showToast {
+    0% {right: -250px}
+    25% {right: 0px}
+    50% {right: 0px}
+    100% {right: -250px}
+}
